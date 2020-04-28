@@ -48,6 +48,7 @@ int main()
     double min, max;
     find_minmax(numbers, min, max);
     const auto bins = make_histogram(numbers, bin_count);
-    show_histogram_svg(bins);
+    double wag=((max-min)/bin_count);
+    show_histogram_svg(bins,wag,min,max);
     return 0;
 }
