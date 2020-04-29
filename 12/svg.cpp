@@ -2,6 +2,24 @@
 #include <vector>
 #include "svg.h"
 using namespace std;
+void max_width(const vector<size_t>& bins,double& maximum)
+{
+    if (bins.size()==0)
+    {
+        return;
+    }
+    else
+    {
+        for (size_t bin : bins)
+        {
+            if (bin > maximum)
+            {
+                maximum = bin;
+            }
+        }
+    }
+}
+
 void svg_rect(double x, double y, double width, double height,string stroke = "black",string fill = "black")
 {
 cout << "<rect x='"<<x<< "' y='" <<y<<"' width='" <<width <<"' height='" <<height <<"' stroke='"<<stroke<<"' fill='"<<fill<<"'/>";
@@ -38,6 +56,8 @@ void show_histogram_svg(const vector<size_t>& bins,double wag,double min,double 
     const auto BIN_HEIGHT = 30;
     const auto BLOCK_WIDTH = 10;
     double top = 0;
+    double maximum=bins[0];
+    max_width(bins,maximum);
     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
     double border=min+wag;
     size_t max_count=0;
@@ -51,7 +71,7 @@ void show_histogram_svg(const vector<size_t>& bins,double wag,double min,double 
     for (size_t bin : bins)
     {
         size_t width=50;
-        if(max_count>MAX_ASTERISK)
+        if(maximum>MAX_ASTERISK)
         {
             width=MAX_ASTERISK*((static_cast<double>(bin))/max_count);
         }
@@ -73,4 +93,6 @@ void show_histogram_svg(const vector<size_t>& bins,double wag,double min,double 
     }
     svg_end();
 }
+
+
 

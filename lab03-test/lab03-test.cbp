@@ -33,6 +33,11 @@
 		</Compiler>
 		<Unit filename="../12/histogram.cpp" />
 		<Unit filename="../12/histogram.h" />
+		<Unit filename="../12/svg.cpp" />
+		<Unit filename="../12/svg.h" />
+		<Unit filename="test-dz.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="test.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

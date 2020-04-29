@@ -10,3 +10,24 @@
 	"C:\Users\nedeo\Desktop\lab03\12\histogram.h"
 	<cassert>
 
+1587122555 source:c:\users\nedeo\desktop\прога\lab03\lab03-test\test.cpp
+	"C:\Users\nedeo\Desktop\lab03\12\histogram.h"
+	<cassert>
+
+1587904432 source:c:\users\nedeo\desktop\прога\lab03\12\histogram.cpp
+	"histogram.h"
+	<vector>
+
+1587118980 c:\users\nedeo\desktop\прога\lab03\12\histogram.h
+	<vector>
+
+1588150346 source:c:\users\nedeo\desktop\прога\lab03\12\test.cpp
+
+1588151341 source:c:\users\nedeo\desktop\прога\lab03\12\svg.cpp
+	<iostream>
+	<vector>
+	"svg.h"
+
+1588151356 c:\users\nedeo\desktop\прога\lab03\12\svg.h
+	<vector>
+
