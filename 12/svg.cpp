@@ -2,6 +2,13 @@
 #include <vector>
 #include "svg.h"
 using namespace std;
+
+double fun_wag(double min,double max,size_t bin_count)
+{
+    double wag=((max-min)/bin_count);
+    return wag;
+}
+
 void max_width(const vector<size_t>& bins,double& maximum)
 {
     if (bins.size()==0)
@@ -45,7 +52,7 @@ svg_end() {
 cout << "</svg>\n";
 }
 
-void show_histogram_svg(const vector<size_t>& bins,double wag,double min,double max)
+void show_histogram_svg(const vector<size_t>& bins,double min,double max,size_t bin_count)
 {
     const auto IMAGE_WIDTH = 400;
     const auto IMAGE_HEIGHT = 300;
@@ -59,6 +66,7 @@ void show_histogram_svg(const vector<size_t>& bins,double wag,double min,double 
     double maximum=bins[0];
     max_width(bins,maximum);
     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
+    double wag=fun_wag(min,max,bin_count);
     double border=min+wag;
     size_t max_count=0;
     for(size_t b:bins)

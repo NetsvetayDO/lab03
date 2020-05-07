@@ -11,6 +11,6 @@ void svg_begin(double width, double height);
 
 void svg_end();
 
-void show_histogram_svg(const vector<size_t>& bins,double wag,double min,double max);
+void show_histogram_svg(const vector<size_t>& bins,double min,double max,size_t bin_count);
 
 #endif // SVG_H_INCLUDED

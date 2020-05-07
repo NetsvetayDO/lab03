@@ -5,14 +5,14 @@
 
 void test_1()
 {
-double maximum = 0;
-max_height({1, 2, 3}, maximum);
-assert(maximum == 3);
+fun_wag(2,4,2);
+assert(wag == 1);
 }
-void test_2() {
-double maximum = 0;
-max_height({3, 3, 3}, maximum);
-assert(maximum == 3);
+
+void test_2()
+{
+fun_wag(2,10,4);
+assert(wag == 2 );
 }
 
 int main()

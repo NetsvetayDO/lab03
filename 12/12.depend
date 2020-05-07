@@ -28,10 +28,10 @@
 	"histogram.h"
 	"svg.h"
 
-1588151356 c:\users\nedeo\desktop\прога\lab03\12\svg.h
+1588840915 c:\users\nedeo\desktop\прога\lab03\12\svg.h
 	<vector>
 
-1588151341 source:c:\users\nedeo\desktop\прога\lab03\12\svg.cpp
+1588840898 source:c:\users\nedeo\desktop\прога\lab03\12\svg.cpp
 	<iostream>
 	<vector>
 	"svg.h"
