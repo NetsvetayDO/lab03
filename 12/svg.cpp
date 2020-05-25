@@ -28,7 +28,7 @@ cout << "</svg>\n";
 }
 
 void
-show_histogram_svg(const vector<size_t>& bins) {
+show_histogram_svg(const vector<size_t>& bins,size_t bin_count) {
 const auto IMAGE_WIDTH = 400;
 const auto IMAGE_HEIGHT = 300;
 const auto TEXT_LEFT = 20;
@@ -38,7 +38,8 @@ const auto BIN_HEIGHT = 30;
 const auto BLOCK_WIDTH = 10;
 double top = 0;
 svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
-for (size_t bin : bins) {
+for (size_t bin : bins)
+{
 const double bin_width = BLOCK_WIDTH * bin;
 svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
 svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT,"red","#aab5ff");
