@@ -15,19 +15,20 @@
 1587124998 c:\users\nedeo\desktop\lab03\12\svg.h
 	<vector>
 
-1590413113 source:c:\users\nedeo\desktop\прога\lab03\12\histogram.cpp
+1590417345 source:c:\users\nedeo\desktop\прога\lab03\12\histogram.cpp
+	<vector>
+	<iostream>
 	"histogram.h"
+
+1590417345 c:\users\nedeo\desktop\прога\lab03\12\histogram.h
 	<vector>
 
-1590413118 c:\users\nedeo\desktop\прога\lab03\12\histogram.h
-	<vector>
-
-1590416261 source:c:\users\nedeo\desktop\прога\lab03\12\svg.cpp
+1590417482 source:c:\users\nedeo\desktop\прога\lab03\12\svg.cpp
 	<iostream>
 	<vector>
 	"svg.h"
 
-1590416261 c:\users\nedeo\desktop\прога\lab03\12\svg.h
+1590417482 c:\users\nedeo\desktop\прога\lab03\12\svg.h
 	<vector>
 
 1590416209 source:c:\users\nedeo\desktop\прога\lab03\12\main.cpp
