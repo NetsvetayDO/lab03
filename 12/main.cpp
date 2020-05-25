@@ -3,11 +3,14 @@
 #include <string>
 #include "histogram.h"
 #include "svg.h"
+#include <curl/curl.h>
 using namespace std;
 
-vector<double> input_numbers(istream& in, const size_t count) {
+vector<double> input_numbers(istream& in, const size_t count)
+{
     vector<double> result(count);
-    for (size_t i = 0; i < count; i++) {
+    for (size_t i = 0; i < count; i++)
+    {
         in >> result[i];
     }
 
@@ -15,7 +18,8 @@ vector<double> input_numbers(istream& in, const size_t count) {
 }
 
 Input
-read_input(istream& in, bool prompt) {
+read_input(istream& in, bool prompt)
+{
     Input data;
     size_t number_count;
 
@@ -41,11 +45,19 @@ read_input(istream& in, bool prompt) {
     return data;
 }
 
-int main() {
+int main()
+{
+    curl_global_init(CURL_GLOBAL_ALL);
+
 
     Input data = read_input(cin, true);
+
+
     const auto bins = make_histogram(data);
+
+
     show_histogram_svg(bins);
+
 
     return 0;
 }
