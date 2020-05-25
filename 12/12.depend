@@ -31,13 +31,13 @@
 1590417482 c:\users\nedeo\desktop\прога\lab03\12\svg.h
 	<vector>
 
-1590422139 source:c:\users\nedeo\desktop\прога\lab03\12\main.cpp
+1590424737 source:c:\users\nedeo\desktop\прога\lab03\12\main.cpp
 	<iostream>
 	<vector>
 	<string>
+	<curl/curl.h>
 	"histogram.h"
 	"svg.h"
-	<curl/curl.h>
 
 1587991348 c:\users\nedeo\desktop\прога\lab03\.gitignore\curl\include\curl\curl.h
 	"curlver.h"
