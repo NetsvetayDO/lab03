@@ -1,8 +1,8 @@
+#include <curl/curl.h>
 #include <iostream>
 #include <vector>
 #include <string>
-#include<curl/curl.h>
-#include<sstream>
+#include <sstream>
 #include "histogram.h"
 #include "svg.h"
 #include <windows.h>
@@ -10,47 +10,95 @@
 #include <sstream>
 using namespace std;
 
-vector<double> input_numbers(istream& in, const size_t count)
+
+
+struct Options
 {
-    vector<double> result(count);
-    for (size_t i = 0; i < count; i++)
+    string fill;
+    bool fill_correct;
+    bool guide;
+    char* url;
+};
+Options parse_args(int argc, char** argv)
+{
+    Options opt;
+    opt.url=0;
+    opt.fill_correct=false;
+    opt.guide = false;
+
+    for (int i = 1; i < argc; i++)
     {
+        if (argv[i][0] == '-')
+        {
+
+            if(string(argv[i]) == "-fill")
+            {
+                if(i+1<argc)
+                {
+                    opt.fill = string(argv[i+1]);
+                    if (opt.fill.size())
+                    {
+                        opt.fill_correct=true;
+                        i++;
+                    }
+                    else
+                        {
+                            opt.guide=true;
+                        }
+                }
+
+                else
+                {
+                    opt.guide = true;
+                }
+            }
+        }
+        else
+        {
+            opt.url=argv[i];
+        }
+    }
+    return opt;
+}
+
+
+
+vector<double> input_numbers(istream& in, const size_t count) {
+    vector<double> result(count);
+    for (size_t i = 0; i < count; i++) {
         in >> result[i];
     }
+
     return result;
 }
 
-Input
-read_input(istream& in, bool prompt)
-{
-    Input data;
+Input read_input(istream& in, bool prompt) {
+    Input input;
     size_t number_count;
-
     if (prompt)
     {
         cerr << "Enter number count: ";
-        in >> number_count;
+         in >> number_count;
 
-        cerr << "Enter numbers: ";
-        data.numbers = input_numbers(in, number_count);
+         cerr << "Enter numbers: ";
+        input.numbers = input_numbers(in, number_count);
 
         cerr << "Enter column count: ";
-        in >> data.bin_count;
-    }
-    else
-    {
-        in >> number_count;
-        data.numbers = input_numbers(in, number_count);
-        in >> data.bin_count;
+        in >> input.bin_count;
+
     }
 
-
-    return data;
+else
+{
+    in >> number_count;
+    input.numbers = input_numbers(in, number_count);
+    in >> input.bin_count;
 }
 
-size_t
-write_data(void* items, size_t item_size, size_t item_count, void* ctx)
-{
+    return input;
+}
+
+size_t write_data(void* items, size_t item_size, size_t item_count, void* ctx) {
     const size_t data_size = item_size * item_count;
     const char* new_items = reinterpret_cast<const char*>(items);
     stringstream* buffer = reinterpret_cast<stringstream*>(ctx);
@@ -58,16 +106,14 @@ write_data(void* items, size_t item_size, size_t item_count, void* ctx)
     return data_size;
 }
 
-Input
-download(const string& address)
-{
+
+Input download(const string& address,const Options &opt) {
     stringstream buffer;
 
     curl_global_init(CURL_GLOBAL_ALL);
 
     CURL *curl = curl_easy_init();
-    if(curl)
-    {
+    if(curl) {
         CURLcode res;
         curl_easy_setopt(curl, CURLOPT_URL, address.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
@@ -80,9 +126,8 @@ download(const string& address)
         }
         curl_easy_cleanup(curl);
     }
-    return read_input(buffer, false);
+   return read_input(buffer, false);
 }
-
 
 
 string make_info_text()
@@ -115,19 +160,38 @@ string make_info_text()
 
 int main(int argc, char* argv[]) {
     string info = make_info_text();
- Input input;
-    if (argc > 1)
+    Input input;
+
+    Options opt=parse_args(argc,argv);
+    if (opt.guide)
     {
-        input = download(argv[1]);
+        cerr<<"Error";
+        return 1;
+    }
+   if (opt.url)
+    {
+        input = download(opt.url,opt);
     }
     else
     {
         input = read_input(cin, true);
     }
 
+   /*
+     if (argc > 1)
+    {
+        input = download(argv[1]);
+    }
+    else
+        {
+        input = read_input(cin, true);
+        }
+    */
+
     const auto bins = make_histogram(input);
-    double min, max;
-    find_minmax(input.numbers, min, max);
-    show_histogram_svg(bins,min,max,input.bin_count);
+    double min,max;
+    find_minmax(input.numbers,min,max);
+    show_histogram_svg(bins,min,max,input.bin_count, opt.fill);
     return 0;
+
 }

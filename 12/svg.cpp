@@ -64,7 +64,7 @@ svg_end()
     cout << "</svg>\n";
 }
 
-void show_histogram_svg(const vector<size_t>& bins,double min,double max,size_t bin_count)
+void show_histogram_svg(const vector<size_t>& bins,double min,double max,size_t bin_count,string fill)
 {
     const auto IMAGE_WIDTH = 400;
     const auto IMAGE_HEIGHT = 300;
@@ -100,7 +100,7 @@ void show_histogram_svg(const vector<size_t>& bins,double min,double max,size_t 
                     const double new_scaling_multiplier=(double)GRAPH_WIDTH/(max_count*BLOCK_WIDTH*scaling_multiplier);
                     const size_t new_bin_width = (size_t)BLOCK_WIDTH*bin*scaling_multiplier*new_scaling_multiplier;
                     svg_text(TEXT_LEFT+25, top + TEXT_BASELINE, to_string(bin));
-                    svg_rect(TEXT_WIDTH+25, top, new_bin_width, BIN_HEIGHT,"lawngreen","#7CFC00");
+                    svg_rect(TEXT_WIDTH+25, top, new_bin_width, BIN_HEIGHT,"lawngreen",fill);
                     top += BIN_HEIGHT;
                     if(border<max)
                     {
@@ -116,7 +116,7 @@ void show_histogram_svg(const vector<size_t>& bins,double min,double max,size_t 
                 {
                     const double bin_width = BLOCK_WIDTH*bin*scaling_multiplier;
                     svg_text(TEXT_LEFT+25, top + TEXT_BASELINE, to_string(bin));
-                    svg_rect(TEXT_WIDTH+25, top,bin_width, BIN_HEIGHT,"lawngreen","#7CFC00");
+                    svg_rect(TEXT_WIDTH+25, top,bin_width, BIN_HEIGHT,"lawngreen",fill);
                     top += BIN_HEIGHT;
                     if(border<max)
                     {
@@ -136,7 +136,7 @@ void show_histogram_svg(const vector<size_t>& bins,double min,double max,size_t 
                     const double new_scaling_multiplier=(double)GRAPH_WIDTH/(max_count*BLOCK_WIDTH);
                     const size_t new_bin_width = (size_t)BLOCK_WIDTH*bin*new_scaling_multiplier;
                     svg_text(TEXT_LEFT+25, top + TEXT_BASELINE, to_string(bin));
-                    svg_rect(TEXT_WIDTH+25, top,new_bin_width, BIN_HEIGHT,"lawngreen","#7CFC00");
+                    svg_rect(TEXT_WIDTH+25, top,new_bin_width, BIN_HEIGHT,"lawngreen",fill);
                     top += BIN_HEIGHT;
                     if(border<max)
                     {
@@ -152,7 +152,7 @@ void show_histogram_svg(const vector<size_t>& bins,double min,double max,size_t 
                 {
                     const double bin_width = BLOCK_WIDTH * bin;
                     svg_text(TEXT_LEFT+25, top + TEXT_BASELINE, to_string(bin));
-                    svg_rect(TEXT_WIDTH+25, top,bin_width, BIN_HEIGHT,"lawngreen","#7CFC00");
+                    svg_rect(TEXT_WIDTH+25, top,bin_width, BIN_HEIGHT,"lawngreen",fill);
                     top += BIN_HEIGHT;
                     if(border<max)
                     {

@@ -13,7 +13,7 @@ void svg_begin(double width, double height);
 
 void svg_end();
 
-void show_histogram_svg(const vector<size_t>& bins,double min,double max,size_t bin_count);
+void show_histogram_svg(const vector<size_t>& bins,double min,double max,size_t bin_count,string fill);
 
 double fun_wag(double& min,double& max,size_t& bin_count);
 
