@@ -31,3 +31,12 @@
 	<string>
 	<vector>
 
+1590744571 source:c:\users\nedeo\desktop\прога\lab03\12\main.cpp
+	<iostream>
+	<vector>
+	"histogram.h"
+	"svg.h"
+	<windows.h>
+	<string.h>
+	<sstream>
+
