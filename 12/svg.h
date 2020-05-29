@@ -1,5 +1,6 @@
 #ifndef SVG_H_INCLUDED
 #define SVG_H_INCLUDED
+#include <string>
 #include <vector>
 #include <iostream>
 using namespace std;

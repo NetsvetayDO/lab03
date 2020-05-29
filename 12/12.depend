@@ -15,24 +15,32 @@
 1587124998 c:\users\nedeo\desktop\lab03\12\svg.h
 	<vector>
 
-1590417345 source:c:\users\nedeo\desktop\прога\lab03\12\histogram.cpp
+1590741856 D
+
+1590745020 source:c:\users\nedeo\desktop\прога\lab03\12\histogram.cpp
 	<vector>
 	<iostream>
 	"histogram.h"
 
-1590417345 c:\users\nedeo\desktop\прога\lab03\12\histogram.h
+1590745205 c:\users\nedeo\desktop\прога\lab03\12\histogram.h
 	<vector>
 
-1590565961 source:c:\users\nedeo\desktop\прога\lab03\12\svg.cpp
+1590745020 source:c:\users\nedeo\desktop\прога\lab03\12\svg.cpp
 	<iostream>
 	<vector>
 	"svg.h"
 
-1590565961 c:\users\nedeo\desktop\прога\lab03\12\svg.h
+1590744571 04-2
+	<iostream>
+	<vector>
+	"svg.h"
+
+1590745205 c:\users\nedeo\desktop\прога\lab03\12\svg.h
+	<string>
 	<vector>
 	<iostream>
 
-1590566070 source:c:\users\nedeo\desktop\прога\lab03\12\main.cpp
+1590744571 source:c:\users\nedeo\desktop\прога\lab03\12\main.cpp
 	<iostream>
 	<vector>
 	<string>
@@ -40,6 +48,13 @@
 	<sstream>
 	"histogram.h"
 	"svg.h"
+	<iostream>
+	<vector>
+	"histogram.h"
+	"svg.h"
+	<windows.h>
+	<string.h>
+	<sstream>
 
 1587991348 c:\users\nedeo\desktop\прога\lab03\.gitignore\curl\include\curl\curl.h
 	"curlver.h"
