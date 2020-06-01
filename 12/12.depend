@@ -17,30 +17,31 @@
 
 1590741856 D
 
-1590745020 source:c:\users\nedeo\desktop\прога\lab03\12\histogram.cpp
+1591000252 source:c:\users\nedeo\desktop\прога\lab03\12\histogram.cpp
 	<vector>
 	<iostream>
 	"histogram.h"
 
-1590745205 c:\users\nedeo\desktop\прога\lab03\12\histogram.h
+1591000252 c:\users\nedeo\desktop\прога\lab03\12\histogram.h
 	<vector>
 
-1590764418 source:c:\users\nedeo\desktop\прога\lab03\12\svg.cpp
+1591045402 source:c:\users\nedeo\desktop\прога\lab03\12\svg.cpp
 	<iostream>
 	<vector>
 	"svg.h"
+	"system_info.h"
 
 1590744571 04-2
 	<iostream>
 	<vector>
 	"svg.h"
 
-1590764697 c:\users\nedeo\desktop\прога\lab03\12\svg.h
+1591000252 c:\users\nedeo\desktop\прога\lab03\12\svg.h
 	<string>
 	<vector>
 	<iostream>
 
-1590765726 source:c:\users\nedeo\desktop\прога\lab03\12\main.cpp
+1591045185 source:c:\users\nedeo\desktop\прога\lab03\12\main.cpp
 	<curl/curl.h>
 	<iostream>
 	<vector>
@@ -129,4 +130,16 @@
 	"curl.h"
 
 1587548874 c:\users\nedeo\desktop\прога\lab03\curl\include\curl\typecheck-gcc.h
+
+1591045402 c:\users\nedeo\desktop\прога\lab03\12\system_info.h
+	<sstream>
+	<iostream>
+	<string>
+
+1591045444 source:c:\users\nedeo\desktop\прога\lab03\12\system_info.cpp
+	<windows.h>
+	<sstream>
+	<iostream>
+	<string>
+	"system_info.h"
 

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "svg.h"
+#include "system_info.h"
 using namespace std;
 
 double fun_wag(double& min,double& max,size_t& bin_count)
@@ -163,5 +164,6 @@ void show_histogram_svg(const vector<size_t>& bins,double min,double max,size_t 
                 }
             }
         }
+        cout << "<text x='" << TEXT_LEFT << "' y='"<<top+BIN_HEIGHT<<"'>"<<make_info_text()<<"</text>";
         svg_end();
 }
